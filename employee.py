@@ -2,14 +2,52 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name):
+    def __init__(self, name, commission = "", contracts =""):
         self.name = name
+        self.commission = commission
+        self.contracts = contracts
+
+
+
+class EmployeeHourlyWage(Employee):
+    def __init__(self, name, wage, hrs, commission, contracts):
+        super().__init__(name, commission, contracts)
+        self.wage = wage
+        self.hrs = hrs
 
     def get_pay(self):
-        pass
+        if commission and contracts:
+            return wage * hrs + commision * contracts
+        elif commission:
+            return wage * hrs  + commission
+        return salary
 
     def __str__(self):
-        return self.name
+        if commission and contracts:
+            return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
+        elif commission:
+            return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
+        return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour.  Their total pay is {self.get_pay()}"
+
+
+class EmployeeMonthlySalary(Employee):
+    def __init__(self, name, salary, commission, contracts):
+        super().__init__(name, commission, contracts)
+        self.salary = salary
+
+    def get_pay(self):
+        if commission and contracts:
+            return salary + commision * contracts
+        elif commission:
+            return salary + commission
+        return salary
+
+    def __str__(self):
+        if commission and contracts:
+            return self.name + f" works on a monthly salary of {self.salary} and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
+        elif commission:
+            return self.name + f" works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
+        return self.name + f" works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay()}"
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
