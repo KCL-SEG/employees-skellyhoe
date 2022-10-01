@@ -21,10 +21,10 @@ class EmployeeHourlyWage(Employee):
 
     def __str__(self):
         if self.commission and self.contracts:
-            return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
+            return self.name + f" works on a contract of {self.hrs} hours at {self.wage}/hour and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
         elif self.commission:
-            return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
-        return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour.  Their total pay is {self.get_pay()}."
+            return self.name + f" works on a contract of {self.hrs} hours at {self.wage}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
+        return self.name + f" works on a contract of {self.hrs} hours at {self.wage}/hour.  Their total pay is {self.get_pay()}."
 
 
 class EmployeeMonthlySalary(Employee):
