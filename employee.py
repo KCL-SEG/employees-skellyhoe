@@ -24,7 +24,7 @@ class EmployeeHourlyWage(Employee):
             return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
         elif self.commission:
             return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
-        return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour.  Their total pay is {self.get_pay()}"
+        return self.name + f" works on a contract of {self.hrs} at {self.wage}/hour.  Their total pay is {self.get_pay()}."
 
 
 class EmployeeMonthlySalary(Employee):
@@ -44,7 +44,7 @@ class EmployeeMonthlySalary(Employee):
             return self.name + f" works on a monthly salary of {self.salary} and receives a commission for {self.contracts} contract(s) at {self.commission}/contract.  Their total pay is {self.get_pay()}."
         elif self.commission:
             return self.name + f" works on a monthly salary of {self.salary} and receives a bonus commission of {self.commission}.  Their total pay is {self.get_pay()}."
-        return self.name + f" works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay()}"
+        return self.name + f" works on a monthly salary of {self.salary}.  Their total pay is {self.get_pay()}."
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
